@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1769851756199,
+    "country": "India",
+    "city": "Bangalore",
+    "visaType": "Tourist",
+    "status": "Active",
+    "createdAt": "2026-01-31T09:29:16.199Z"
+  },
+  {
+    "id": 1769851813604,
+    "country": "india ",
+    "city": "banglore ",
+    "visaType": "toourist",
+    "status": "Active",
+    "createdAt": "2026-01-31T09:30:13.604Z"
+  }
+]
