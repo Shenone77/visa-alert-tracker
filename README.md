@@ -1,89 +1,114 @@
-🐼 Visa Slot Alert Tracker – The Flying Panda
+# 🐼 Visa Slot Alert Tracker  
+### Internal Tool for *The Flying Panda*
 
-A mini internal tool to track visa slot alerts for different countries and visa types.
-Built using Node.js + Express for backend and React for frontend.
+- A mini full-stack internal tool to track visa slot alerts by country, city, visa type, and status.  
+Built using **Node.js + Express** (backend) and **React** (frontend).
 
-⚙️ Setup Steps
-Backend
+---
 
-Open terminal in backend folder.
+## 📌 Features
 
-Install dependencies:
+- Create visa slot alerts  
+- View alerts in a list/table format  
+- Update alert status (Active / Booked / Expired)  
+- Delete alerts  
+- Filter alerts by country or status  
+- RESTful API with proper HTTP status codes  
 
+---
+
+## 🧱 Tech Stack
+
+### Backend
+- Node.js
+- Express.js
+- File-based JSON storage
+- Custom middleware (logger & error handler)
+
+### Frontend
+- React
+- Fetch API
+- Simple, clean UI
+
+---
+
+## 📂 Data Model
+
+Each alert contains:
+
+id
+country
+city
+visaType (Tourist / Business / Student)
+status (Active / Booked / Expired)
+createdAt
+
+
+---
+
+# ⚙️ Setup Instructions
+
+## 1️⃣ Backend Setup
+
+```bash
+cd backend
 npm install
-
-
-Start server:
-
 node server.js
+```
 
-
-Backend runs at:
-
+### Server runs at:
+```
 http://localhost:5000
-
-Frontend
-
-Open terminal in frontend folder.
-
-Install dependencies:
-
+```
+## 2️⃣ Frontend Setup
+```
+cd frontend
 npm install
-
-
-Start frontend:
-
 npm start
-
-
-Frontend runs at:
-
+```
+### Frontend runs at:
+```
 http://localhost:3000
+```
+## 🔌 API Endpoints
+Method	Endpoint	Description
+```
+GET	/alerts	Fetch all alerts
+POST	/alerts	Create a new alert
+PUT	/alerts/:id	Update alert status
+DELETE	/alerts/:id	Delete an alert
+```
+# Query Filters
+```
+GET /alerts?country=India
+GET /alerts?status=Active
+```
 
-🧠 Design Decisions
+## 🧠 Design Decisions
+- File-based JSON storage for simplicity and quick setup
+- Express Router for clean and modular backend structure
+- Custom middleware for logging and centralized error handling
+- CORS enabled for frontend-backend communication
+- Minimal UI to focus on functionality
 
-File-based JSON storage: Lightweight, simple for a mini internal tool.
+  
+## 🚀 What I’d Improve for Production
+- Replace file storage with a database (MongoDB / PostgreSQL)
+- Add authentication and authorization
+- Add input validation
+- Pagination and advanced filtering
+- Improved UI/UX and responsiveness
+- Dockerization and cloud deployment
 
-Express routes: CRUD endpoints with proper HTTP status codes.
+## 🤖 AI Usage Disclosure
+### Where AI Helped
+- Project structure and boilerplate suggestions
+- Syntax guidance and debugging assistance
+- Where I Applied My Own Thinking
+- API and data model design
+- Handling file persistence
+- Debugging CORS and runtime issues
 
-Middleware: Logger to track API calls; centralized error handling.
+Integrating frontend with backend
 
-Frontend: Minimal UI with React, calling backend API using fetch.
-
-Filters: Backend supports query filters for country and status.
-
-🏗️ What I’d Improve for Production
-
-Replace file storage with a database (MongoDB/PostgreSQL) for persistence.
-
-Add authentication and authorization.
-
-Input validation for backend and frontend.
-
-Pagination and search for alert lists.
-
-UI/UX improvements and responsive design.
-
-Dockerization and deployment to cloud.
-
-🤖 Where AI Helped vs Where I Had to Think
-
-AI Helped With:
-
-Boilerplate setup for React and Express
-
-Code structuring suggestions
-
-Debugging hints and syntax reminders
-
-My Own Thinking:
-
-Designing the API and data model
-
-Handling file storage safely
-
-Debugging CORS and runtime errors
-
-Connecting frontend and backend
-
-Deciding trade-offs between simplicity and scalability
+Making architectural trade-offs
